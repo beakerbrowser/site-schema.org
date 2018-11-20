@@ -2,7 +2,7 @@
 
 ![Draft](https://img.shields.io/badge/Draft-In%20progress-yellow.svg)
 
-Site schemas are a machine-readable description format used to validate and describe the file and folder structures of websites. They may offer additional annotations for user interfaces and for enforcing permissions.
+Site schemas are a machine-readable description format used to validate and describe the file structures of websites. They may offer additional annotations for user interfaces and for enforcing permissions.
 
 Links:
 
