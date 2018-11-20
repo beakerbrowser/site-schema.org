@@ -1,0 +1,126 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://site-schema.org/draft-01.json",
+  "type": "object",
+  "title": "Site Schema",
+  "description": "A description of the files and folders in a website.",
+  "required": [
+    "title"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "const": "http://site-schema.org/draft-01.json"
+    },
+    "$id": {
+      "type": "string",
+      "format": "uri"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "files": {
+      "$ref": "#/definitions/files"
+    },
+    "extensions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "jsonSchema": {
+      "type": "string",
+      "format": "uri"
+    },
+    "additionalFiles": {
+      "type": "boolean",
+      "default": true
+    },
+    "folders": {
+      "$ref": "#/definitions/folders"
+    },
+    "additionalFolders": {
+      "type": "boolean",
+      "default": true
+    },
+    "protected": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "definitions": {
+    "folders": {
+      "type": "object",
+      "patternProperties": {
+        "^([a-zA-Z-.]*)$": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "files": {
+              "$ref": "#/definitions/files"
+            },
+            "extensions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "jsonSchema": {
+              "type": "string",
+              "format": "uri"
+            },
+            "additionalFiles": {
+              "type": "boolean",
+              "default": true
+            },
+            "folders": {
+              "$ref": "#/definitions/folders"
+            },
+            "additionalFolders": {
+              "type": "boolean",
+              "default": true
+            },
+            "protected": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "files": {
+      "type": "object",
+      "patternProperties": {
+        "^([a-zA-Z-.]*)$": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "jsonSchema": {
+              "type": "string",
+              "format": "uri"
+            },
+            "protected": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
