@@ -84,8 +84,8 @@ Site schemas are used by [Beaker browser](https://beakerbrowser.com) application
 |-|-|
 |**Descriptions**|Site schemas give us the metadata we need to describe files and folders to the user. This is useful in permission prompts.|
 |**Semantic&nbsp;knowledge**|In the same way that file-extensions describe the content of a file, site schema URLs identify the content of a site.|
-|**Organization**|Site schemas help organize data by setting a predefined structure which can not be altered. The browser ensures that files and folders declared by the schema are present.|
-|**Automated&nbsp;validation**|Site schemas help avoid errors by automatically validating data before it is written to the site.|
+|**Organization**|Site schemas help organize data by setting a predefined structure.|
+|**Automated&nbsp;validation**|Site schemas can help avoid errors by validating data before it is written to the site.|
 |**Advanced&nbsp;permissions**|Site schemas can describe advanced permissions such as "protected" folders.|
 
 ## Background
