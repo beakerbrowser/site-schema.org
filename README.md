@@ -69,9 +69,9 @@ This schema will produce a site with the following structure:
 
 This site will also have the following attributes:
 
- - The folder structure is rigid. No folders other than `/posts`, `/media`, `/media/images`, and `/media/videos` can be created.
- - The file structure is semi-rigid. The root folder can contain any file, but the `/posts` folder may only contain `.json` files, the `/media/images` folder can only contain images, and the `/media/videos` folder can only contain videos.
- - Some JSON files will be automatically validated. The `/profile.json` file must pass the `http://example.com/user-profile.json` schema validation, and any JSON file in `/posts` must pass the `http://example.com/post.json` schema validation.
+ - The folder structure is rigid. No folders other than `/posts`, `/media`, `/media/images`, and `/media/videos` can be created. (See [`folders`](./draft-01.md#folders) and [`additionalFolders`](./draft-01.md#additionalfolders).)
+ - The file structure is semi-rigid. The root folder can contain any file, but the `/posts` folder may only contain `.json` files, the `/media/images` folder can only contain images, and the `/media/videos` folder can only contain videos. (See [`files`](./draft-01.md#files), [`additionalFiles`](./draft-01.md#additionalfiles), and [`extensions`](./draft-01.md#extensions).)
+ - Some JSON files will be automatically validated. The `/profile.json` file must pass the `http://example.com/user-profile.json` schema validation, and any JSON file in `/posts` must pass the `http://example.com/post.json` schema validation. (See [`jsonSchema`](./draft-01.md#jsonschema).)
 
 ## Specification draft
 
