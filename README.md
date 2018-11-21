@@ -15,7 +15,7 @@ This spec is a proposal. It has not yet been adopted for Beaker's roadmap.
 
 ## Example
 
-This is the example schema for an unwalled.garden "user" site.
+This is the example schema for a "user" site.
 
 ```json
 {
