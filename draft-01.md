@@ -8,7 +8,6 @@ Site schemas are a machine-readable description format used to validate the file
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [Examples](#examples)
 - [Schema file location](#schema-file-location)
 - [Definitions](#definitions)
   - [Privileged origins](#privileged-origins)
@@ -42,64 +41,6 @@ Site schemas are a machine-readable description format used to validate the file
     - [`protected`](#protected-2)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-## Examples
-
-This is the example schema for an unwalled.garden "user" site.
-
-```json
-{
-  "$schema": "http://site-schema.org/draft-01.json",
-  "$id": "http://unwalled.garden/user-site.json",
-  "title": "User",
-  "additionalFiles": true,
-  "additionalFolders": true,
-  "files": {
-    "profile.json": {
-      "title": "User profile information",
-      "jsonSchema": "http://unwalled.garden/user-profile.json"
-    }
-  },
-  "folders": {
-    "bookmarks": {
-      "title": "Bookmarks",
-      "description": "Saved links",
-      "extensions": ["json"],
-      "jsonSchema": "http://unwalled.garden/bookmark.json",
-      "additionalFolders": false
-    },
-    "contacts": {
-      "title": "Contacts",
-      "extensions": ["json"],
-      "jsonSchema": "http://unwalled.garden/contact.json",
-      "additionalFolders": false
-    },
-    "keys": {
-      "title": "Encryption keys",
-      "extensions": ["json"],
-      "jsonSchema": "http://unwalled.garden/keys.json",
-      "protected": true
-    },
-    "media": {
-      "title": "Media",
-      "additionalFiles": false,
-      "additionalFolders": false,
-      "folders": {
-        "images": {
-          "title": "Images",
-          "extensions": ["png", "gif", "jpg", "jpeg"],
-          "additionalFolders": false
-        },
-        "videos": {
-          "title": "Videos",
-          "extensions": ["mp4", "avi"],
-          "additionalFolders": false
-        }
-      }
-    }
-  }
-}
-```
 
 ## Schema file location
 

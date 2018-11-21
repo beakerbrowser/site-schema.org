@@ -20,28 +20,22 @@ This is the example schema for an unwalled.garden "user" site.
 ```json
 {
   "$schema": "http://site-schema.org/draft-01.json",
-  "$id": "http://unwalled.garden/user-site.json",
-  "title": "User",
+  "$id": "http://example.com/user-site.json",
+  "title": "Example User",
   "additionalFiles": true,
-  "additionalFolders": true,
+  "additionalFolders": false,
   "files": {
     "profile.json": {
       "title": "User profile information",
-      "jsonSchema": "http://unwalled.garden/user-profile.json"
+      "jsonSchema": "http://example.com/user-profile.json"
     }
   },
   "folders": {
-    "contacts": {
-      "title": "Contacts",
+    "posts": {
+      "title": "Social feed posts",
       "extensions": ["json"],
-      "jsonSchema": "http://unwalled.garden/contact.json",
+      "jsonSchema": "http://example.com/post.json",
       "additionalFolders": false
-    },
-    "keys": {
-      "title": "Encryption keys",
-      "extensions": ["json"],
-      "jsonSchema": "http://unwalled.garden/keys.json",
-      "protected": true
     },
     "media": {
       "title": "Media",
@@ -64,6 +58,21 @@ This is the example schema for an unwalled.garden "user" site.
 }
 ```
 
+This schema will produce a site with the following structure:
+
+```
+/profile.json
+/posts
+/media/images
+/media/videos
+```
+
+This site will also have the following attributes:
+
+ - The folder structure is rigid. No folders other than `/posts`, `/media`, `/media/images`, and `/media/videos` can be created.
+ - The file structure is semi-rigid. The root folder can contain any file, but the `/posts` folder may only contain `.json` files, the `/media/images` folder can only contain images, and the `/media/videos` folder can only contain videos.
+ - Some JSON files will be automatically validated. The `/profile.json` file must pass the `http://example.com/user-profile.json` schema validation, and any JSON file in `/posts` must pass the `http://example.com/post.json` schema validation.
+
 ## Specification draft
 
 [Read the draft-01 specification here](./draft-01.md).
@@ -82,7 +91,7 @@ Site schemas are used by [Beaker browser](https://beakerbrowser.com) application
 
 ## Background
 
-Site schemas were created to explore an alternative to [Object-store folders (OSFs)](https://github.com/beakerbrowser/specs/blob/master/object-store-folder.md). They were created due to concerns that OSFs and the UI/UX flows around them were too complex. It addresses the following concerns:
+Site schema was created to explore an alternative to [Object-store folders (OSFs)](https://github.com/beakerbrowser/specs/blob/master/object-store-folder.md). It was created due to concerns that OSFs and the UI/UX flows around them were too complex. It addresses the following concerns:
 
 ### Concern: Dataset conflicts
 
@@ -90,7 +99,7 @@ It's possible for OSFs to have multiple variations of a similar dataset. For ins
 
 ### Concern: Conceptual simplicitiy
 
-Site schemas create a schema for the entire site. This is conceptually simpler than a set of definitions which describe datasets within a site
+Site schemas create a schema for the entire site. This is conceptually simpler than multiple definitions which describe datasets within a site.
 
 ### Concern: Mechanical simplicity
 
